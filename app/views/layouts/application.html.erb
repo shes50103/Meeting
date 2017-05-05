@@ -16,8 +16,9 @@
       <%= link_to('註冊', new_registration_path(:user)) %> |
       <%= link_to('登入', new_session_path(:user)) %>
     <% end %>
-
-    <%= yield %>
+      <div class="container">
+      <%= yield %>
+      </div>
     <%= console %>
   </body>
 </html>

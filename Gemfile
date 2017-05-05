@@ -34,7 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
 gem 'erubis'
-
+gem 'jquery-rails'
+gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
