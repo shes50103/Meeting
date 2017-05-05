@@ -1,9 +1,7 @@
-<%= form_for(post) do |f| %>
-<%= f.label :title, "標題" %>
-<%= f.text_field :title %> <br />
 
-<%= f.label :content, "內容" %>
-<%= f.text_field :content %> <br />
 
-<%= f.submit %>
+<%= simple_form_for(post) do |f| %>
+  <%= f.input :title, label: "標題" %>
+  <%= f.input :content, label: "內容" %>
+  <%= f.submit %>
 <% end %>
