@@ -1,0 +1,20 @@
+<h1>文章列表</h1>
+
+<%= link_to "新增文章", new_post_path %>
+
+<table>
+  <thead>
+    <tr>
+      <td>文章標題</td>
+      <td>內容</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

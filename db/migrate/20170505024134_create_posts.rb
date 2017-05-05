@@ -1,6 +1,7 @@
-class CreateTitles < ActiveRecord::Migration[5.1]
+class CreatePosts < ActiveRecord::Migration[5.1]
   def change
-    create_table :titles do |t|
+    create_table :posts do |t|
+      t.string :title
       t.text :content
       t.references :user, foreign_key: true
 
