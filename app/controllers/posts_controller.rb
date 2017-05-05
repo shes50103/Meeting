@@ -27,9 +27,11 @@ before_action :find_post, only: [:edit, :update, :destroy, :vote]
 
     if @post.save
       # 成功
+      puts 'hahhaaha'
       redirect_to posts_path, notice: "成功新增候選人!"
     else
       # 失敗
+      puts 'dododod'
       render :new
     end
   end
