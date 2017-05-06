@@ -1,12 +1,14 @@
 <h1>文章列表</h1>
 
 <%= link_to "新增文章", new_post_path , class:'btn btn-primary btn-lg'%>
+<h3>我的文章</h3>
 
 <table class = 'table'>
   <thead>
     <tr>
-      <td>文章標題</td>
+      <td>標題</td>
       <td>內容</td>
+      <td>是否公開</td>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +16,26 @@
     <tr>
       <td><%= post.title %></td>
       <td><%= post.content %></td>
+      <td><%= post.public %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<h3>其他人的文章</h3>
+<table class = 'table'>
+  <thead>
+    <tr>
+      <td>標題</td>
+      <td>內容</td>
+      <td>作者</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @public_posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= post.user %></td>
     </tr>
     <% end %>
   </tbody>

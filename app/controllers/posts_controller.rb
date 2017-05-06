@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = current_user.posts.all
+    @public_posts = Post.all.available(current_user)
   end
 
   def new
@@ -37,7 +38,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :user_id)
+    params.require(:post).permit(:title, :content, :public)
   end
 
   def find_post
