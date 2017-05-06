@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :update, :destroy, :vote]
 
   def index
-    @posts = Post.all
+    @posts = current_user.posts.all
   end
 
   def new
@@ -14,10 +14,8 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      # 成功
       redirect_to posts_path, notice: "資料更新成功!"
     else
-      # 失敗
       render :edit
     end
   end
@@ -26,10 +24,8 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
 
     if @post.save
-      # 成功
       redirect_to posts_path, notice: "成功新增候選人!"
     else
-      # 失敗
       render :new
     end
   end
