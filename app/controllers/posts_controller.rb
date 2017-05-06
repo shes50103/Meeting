@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
-before_action :find_post, only: [:edit, :update, :destroy, :vote]
+  before_action :find_post, only: [:edit, :update, :destroy, :vote]
 
   def index
     @posts = Post.all
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.new
   end
 
   def edit
@@ -23,15 +23,13 @@ before_action :find_post, only: [:edit, :update, :destroy, :vote]
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
 
     if @post.save
       # 成功
-      puts 'hahhaaha'
       redirect_to posts_path, notice: "成功新增候選人!"
     else
       # 失敗
-      puts 'dododod'
       render :new
     end
   end
@@ -43,10 +41,11 @@ before_action :find_post, only: [:edit, :update, :destroy, :vote]
 
   private
   def post_params
-    params.require(:post).permit(:title, :content )
+    params.require(:post).permit(:title, :content, :user_id)
   end
 
   def find_post
     @post = Post.find_by(id: params[:id])
   end
+
 end
