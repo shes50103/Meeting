@@ -41,23 +41,9 @@
 
 <h4>Your friends </h4>
 <ul>
-    <% current_user.active_friends.each do |request| %>
+    <% current_user.friends.each do |request| %>
     <li>
       <%= request.email %>
     </li>
   <% end %>
 </ul>
-
-<h4>Your friends </h4>
-<ul>
-    <% current_user.received_friends.each do |request| %>
-    <li>
-      <%= request.email %>
-    </li>
-  <% end %>
-</ul>
-
-
-
-	<%#= link_to 'New User?', new_user_path  %>
-	<%#= link_to 'Log In', users_login_path %>
