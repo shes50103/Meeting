@@ -3,10 +3,10 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.friendships.build(friend_id: params[:friend_id])
     if @friendship.save
       flash[:notice] = "Friend requested."
-      redirect_to :static_index
+      redirect_to :social_index
     else
       flash[:error] = "Unable to request friendship."
-      redirect_to :static_index
+      redirect_to :social_index
     end
   end
 
@@ -14,9 +14,9 @@ class FriendshipsController < ApplicationController
   @friendship = Friendship.where(friend_id: current_user.id ,user_id: params[:id]).first
   @friendship.update(accepted: "true")
     if @friendship.save
-      redirect_to :static_index, notice: "Successfully confirmed friend!"
+      redirect_to :social_index, notice: "Successfully confirmed friend!"
     else
-      redirect_to :static_index, notice: "Sorry! Could not confirm friend!"
+      redirect_to :social_index, notice: "Sorry! Could not confirm friend!"
     end
 
   @friendship_me = current_user.friendships.build(friend_id: params[:id])
@@ -27,6 +27,6 @@ class FriendshipsController < ApplicationController
     @friendship = Friendship.find_by(id: params[:id])
     @friendship.destroy
     flash[:notice] = "Removed friendship."
-    redirect_to :static_index
+    redirect_to :social_index
   end
 end
