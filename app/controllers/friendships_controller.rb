@@ -11,7 +11,7 @@ class FriendshipsController < ApplicationController
     end
 
     def update
-    @friendship = Friendship.find_by(id: params[:id])
+    @friendship = Friendship.find_by(user_id: params[:id])
     @friendship.update(accepted: "true")
       if @friendship.save
         redirect_to :static_index, notice: "Successfully confirmed friend!"

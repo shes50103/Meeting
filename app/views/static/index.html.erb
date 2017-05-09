@@ -2,8 +2,7 @@
 
 <h3>Welcome <%= current_user.email %></h3>
 
-<h4>Your friends listed:</h4>
-
+<!-- <h4>User list:</h4>
 <ul>
 	<% @users.each do |user| %>
 		<% unless user == current_user || user == current_user && user.pending == true %>
@@ -13,7 +12,45 @@
 			</li>
 		<% end %>
 	<% end %>
+</ul>  -->
+
+
+<!-- <h4>User list:!!</h4>
+<ul>
+  <% @users.each do |user| %>
+    <% unless user == current_user ||  user == current_user.friendships[0].friend %>
+      <li>
+        <%= user %> 
+        <%= link_to "Add Friend", friendships_path(friend_id: user), method: :post %>
+      </li>
+     <% end %>
+  <% end %>
+</ul> -->
+
+<h4>User list:!!</h4>
+<ul>
+  <% @users.each do |user| %>
+    <% flag = 0 %>
+    <% unless user == current_user %>
+      <% current_user.friendships.each do |f| %>
+        <% if user == f.friend %>
+          <% flag = 1 %>
+        <% end %>
+      <% end %>
+    <% if flag == 0 %>
+      <li>
+        <%= user %> 
+        <%= link_to "Add Friend", friendships_path(friend_id: user), method: :post %>
+      </li>
+    <% end %>
+    <% end %>
+  <% end %>
 </ul>
+
+
+
+
+
 
 <h4>Your awaiting friend requests:</h4>
 
@@ -33,8 +70,6 @@
     <% current_user.pending_friends.each do |request| %>
     <li>
       <%= request.email %>
-      <%= link_to "Accept",  friendship_path(id: request.id), method: "put" %>
-      <%= link_to "Decline", friendship_path(id: request.id), method: :delete %>
     </li>
   <% end %>
 </ul>
