@@ -79,6 +79,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    devise-bootstrapped (0.1.1)
     erubi (1.6.0)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -209,6 +210,7 @@ DEPENDENCIES
   capybara (~> 2.13.0)
   coffee-rails (~> 4.2)
   devise!
+  devise-bootstrapped
   erubis
   faker
   jbuilder (~> 2.5)
