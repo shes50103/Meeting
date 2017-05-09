@@ -8,4 +8,9 @@ Rails.application.routes.draw do
 	root 'home#index'
     resources :posts do
     end
+    resources :chatrooms do
+    resource :chatroom_users
+    end
+    resources :direct_messages
+
 end
