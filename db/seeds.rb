@@ -16,7 +16,7 @@ User.create(
   password: 'aaaaaa',
   )
 
-10.times {
+4.times {
 User.create(
   email: Faker::Internet.free_email, 
   password: 'aaaaaa',

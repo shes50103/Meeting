@@ -2,32 +2,9 @@
 
 <h3>Welcome <%= current_user.email %></h3>
 
-<!-- <h4>User list:</h4>
-<ul>
-	<% @users.each do |user| %>
-		<% unless user == current_user || user == current_user && user.pending == true %>
-			<li>
-				<%= user.email %> |
-				<%= link_to "Add Friend", friendships_path(friend_id: user), method: :post %>
-			</li>
-		<% end %>
-	<% end %>
-</ul>  -->
 
 
-<!-- <h4>User list:!!</h4>
-<ul>
-  <% @users.each do |user| %>
-    <% unless user == current_user ||  user == current_user.friendships[0].friend %>
-      <li>
-        <%= user %> 
-        <%= link_to "Add Friend", friendships_path(friend_id: user), method: :post %>
-      </li>
-     <% end %>
-  <% end %>
-</ul> -->
-
-<h4>User list:!!</h4>
+<h4>Stranger list:</h4>
 <ul>
   <% @users.each do |user| %>
     <% flag = 0 %>

@@ -16,8 +16,6 @@ class User < ApplicationRecord
   has_many :pending_friends, -> { where(friendships: { accepted: false}) }, through: :friendships, source: :friend
   has_many :requested_friendships, -> { where(friendships: { accepted: false}) }, through: :received_friendships, source: :user
 
-  scope :stranger, -> { where(friendships: { accepted: false})}
-  # scope :stranger, -> { where(email: 'shes50103@gmail.com')}
 
 
   # to call all your friends
