@@ -1,0 +1,20 @@
+<p>
+  <strong>Name:</strong>
+  <%= @chatroom.name %>
+</p>
+
+
+<h4>Chatroom members </h4>
+<ul>
+    <% @chatroom.chatroom_users.each do |request| %>
+    <li>
+      <%= request.user %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= link_to "返回", chatrooms_path %>
+
+
+
