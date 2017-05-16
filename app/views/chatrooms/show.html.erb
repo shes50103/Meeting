@@ -3,7 +3,6 @@
   <%= @chatroom.name %>
 </p>
 
-
 <h4>Chatroom members </h4>
 <ul>
     <% @chatroom.chatroom_users.each do |request| %>
@@ -13,8 +12,18 @@
   <% end %>
 </ul>
 
+<div data-behavior='messages'>
+  <% @messages.each do |message| %>
+  <div> <strong> <%= message.user.email %>:</strong><%= message.body %></div>
+  <% end %>
+</div>
 
-<%= link_to "返回", chatrooms_path %>
+<%= form_for [@chatroom, Message.new] do |f| %>
+  <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
+<% end %>
+
+
+<%= link_to "返回2", chatrooms_path %>
 
 
 
