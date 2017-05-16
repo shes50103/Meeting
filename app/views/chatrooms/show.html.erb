@@ -14,7 +14,7 @@
 
 <div data-behavior='messages'>
   <% @messages.each do |message| %>
-  <div> <strong> <%= message.user.email %>:</strong><%= message.body %></div>
+  <div> <strong> <%= message.user %>: </strong><%= message.body %></div>
   <% end %>
 </div>
 
