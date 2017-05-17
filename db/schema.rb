@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516063047) do
+ActiveRecord::Schema.define(version: 20170517073239) do
 
   create_table "chatroom_users", force: :cascade do |t|
     t.integer "chatroom_id"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20170516063047) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "direct_message", default: false
+  end
+
+  create_table "elements", force: :cascade do |t|
+    t.string "name"
+    t.text "content"
+    t.integer "completion", default: 0
+    t.integer "chatroom_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_elements_on_chatroom_id"
   end
 
   create_table "friendships", force: :cascade do |t|
