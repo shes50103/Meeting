@@ -6,5 +6,10 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-  	$("[data-behavior='messages'][data-chatroom-id='#{data.chatroom_id}']").append(data.message)
-    # Called when there's incoming data on the websocket for this channel
+    active_chatroom = $("[data-behavior='messages'][data-chatroom-id='#{data.chatroom_id}']")
+    if active_chatroom.length > 0
+      active_chatroom.append(data.message)
+    else
+      $("[data-behavior='chatroom-link'][data-chatroom-id='#{data.chatroom_id}']").css("font-weight", "bold")
+
+
