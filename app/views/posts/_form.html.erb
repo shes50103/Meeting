@@ -1,8 +1,31 @@
 
-
+<div class="row">
+<div class="col-sm-4 ">
 <%= simple_form_for(post) do |f| %>
-  <%= f.input :title, label: "標題" %>
-  <%= f.input :content, label: "內容" %>
-  <%= f.input :public, label: "公開" %>
-  <%= f.submit %>
+
+  <div class="form-group">
+    <%= f.label "標題" %><br />
+    <%= f.text_field :title, class: 'form-control'  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "內容" %><br />
+    <%= f.text_area :content, class: 'form-control', rows: "4" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :public, label: "公開" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "新增文章", class: 'btn btn-lg  btn-primary' %>
+  </div>
+
 <% end %>
+</div>
+</div>
+
+
+
+
+
