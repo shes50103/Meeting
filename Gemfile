@@ -38,6 +38,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise-bootstrapped'
+gem 'redis'
 
 
 group :development, :test do

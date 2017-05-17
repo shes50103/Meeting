@@ -12,9 +12,9 @@
   <% end %>
 </ul>
 
-<div data-behavior='messages'>
+<div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
   <% @messages.each do |message| %>
-  <div> <strong> <%= message.user %>: </strong><%= message.body %></div>
+  	<%= render message%>
   <% end %>
 </div>
 
@@ -23,7 +23,7 @@
 <% end %>
 
 
-<%= link_to "返回2", chatrooms_path %>
+<%= link_to "返回", chatrooms_path %>
 
 
 
