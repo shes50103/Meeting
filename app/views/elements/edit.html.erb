@@ -15,18 +15,16 @@
   </div>
 
   <div class="form-group">
-    <%= f.label "完成度" %><br />
-    <%= f.text_field :completion, class: 'form-control' %>
+    <%= f.input :completion, collection: 0..10, label: "完成度", class: 'form-control' %>
   </div>
-
-
 
   <div class="form-group">
-    <%= f.submit "新增進度", class: 'btn btn-lg  btn-primary' %>
+    <%= f.submit "編輯進度", class: 'btn btn-lg  btn-primary' %>
   </div>
+
 
 <% end %>
 </div>
 </div>
 
-<br />
+<br/>
