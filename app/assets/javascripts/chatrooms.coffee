@@ -4,7 +4,9 @@ $(document).on "turbolinks:load", ->
       e.preventDefault()
       $(this).submit()
 
-  $(".show_content").on "click", (e) ->
+  $('.content').hide();
+
+  $(".element_name").on "click", (e) ->
     e.preventDefault()
-    $(this).children().slideToggle(500);
+    $(this).siblings('.content').slideToggle(500);
 
