@@ -5,13 +5,16 @@
 <%= link_to "新增進度", new_chatroom_element_path(@chatroom) %>
 
   <h4>Chatroom elements </h4>
-  <ul>
+   <ul>
       <% @chatroom.elements.each do |element| %>
-      <li>
-        <div id='show_content'><%= element.name %><div>
-      </li>
+        <li>
+          <div class='show_content btn btn-success btn-sm'>
+            <%= element.name %>
+            <div><%= element.content %><div>
+          <div>
+        </li>  
     <% end %>
-  </ul>
+   </ul>
 
   <h4>Chatroom members </h4>
   <ul>
