@@ -2,7 +2,7 @@
  <h2> <%= @chatroom.name %></h2>
 
 <div class="col-sm-3 ">
-  <h4>Chatroom members </h4>
+  <h4>Chatroom Members </h4>
   <ul>
       <% @chatroom.chatroom_users.each do |request| %>
       <li>
@@ -17,8 +17,8 @@
 
   <% @chatroom.elements.each do |element| %>
     <div class = 'show_content'>
-      <div class = 'element_name btn btn-primary btn-sm'><%= element.name %></div>
-      <%= element.completion * 10 %> <%= '%' %>
+      <div class = 'element_name btn btn-default btn-sm'><%= element.name %></div>
+      <span class = 'element_completion'><%= element.completion * 10 %> </span><%= '%' %>
       <div class = 'content'>
         <%= element.content %>
         </br>
