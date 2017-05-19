@@ -14,7 +14,7 @@ class ChatroomUsersController < ApplicationController
 
   private
 
-    def set_chatroom
-      @chatroom = Chatroom.find(params[:chatroom_id])
-    end
+  def set_chatroom
+    @chatroom = Chatroom.find(params[:chatroom_id])
+  end
 end
