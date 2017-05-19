@@ -14,6 +14,12 @@
     <%= f.text_area :content, class: 'form-control', rows: "4" %>
   </div>
 
+  <div class="form-group">
+    <%= f.label "完成度" %><br />
+    <%= f.text_field :completion, class: 'form-control' %>
+  </div>
+
+
 
   <div class="form-group">
     <%= f.submit "新增進度", class: 'btn btn-lg  btn-primary' %>

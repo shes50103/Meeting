@@ -18,10 +18,11 @@
   <% @chatroom.elements.each do |element| %>
     <div class = 'show_content'>
       <div class = 'element_name btn btn-primary btn-sm'><%= element.name %></div>
+      <%= element.completion %>
       <div class = 'content'>
         <%= element.content %>
         </br>
-        <%= link_to "編輯進度", edit_chatroom_element_path(@chatroom) %>
+        <%= link_to "編輯進度", edit_chatroom_element_path(@chatroom, element) %>
       </div>
     </div>
     </br>
