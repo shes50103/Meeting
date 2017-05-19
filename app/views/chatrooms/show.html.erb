@@ -3,13 +3,9 @@
 
 <div class="col-sm-3 ">
   <h4>Chatroom Members </h4>
-  <ul>
       <% @chatroom.chatroom_users.each do |request| %>
-      <li>
-        <%= request.user %>
-      </li>
+       <div class = 'element_name btn btn-primary btn-sm'><%= request.user %></div></br>
     <% end %>
-  </ul>
 
 
   <h4>Agenda </h4>
@@ -28,7 +24,7 @@
     </br>
   <% end %>
 
-  <%= link_to "返回", chatrooms_path %>
+  
 </div>
 
 <div class="col-sm-6 ">
