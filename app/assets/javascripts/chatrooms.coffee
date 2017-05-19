@@ -5,3 +5,6 @@ $(document).on "turbolinks:load", ->
       console.log(e.keyCode)
       $(this).submit()
 
+  $("#show_content").on "click", (e) ->
+    console.log('!!aa!!')
+

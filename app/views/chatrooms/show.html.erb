@@ -6,9 +6,9 @@
 
   <h4>Chatroom elements </h4>
   <ul>
-      <% @chatroom.elements.each do |request| %>
+      <% @chatroom.elements.each do |element| %>
       <li>
-        <%= request.name %>
+        <div id='show_content'><%= element.name %><div>
       </li>
     <% end %>
   </ul>
