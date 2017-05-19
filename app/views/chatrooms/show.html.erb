@@ -1,16 +1,31 @@
-<p>
-  <strong>Name:</strong>
-  <%= @chatroom.name %>
-</p>
 
-<h4>Chatroom members </h4>
-<ul>
-    <% @chatroom.chatroom_users.each do |request| %>
-    <li>
-      <%= request.user %>
-    </li>
-  <% end %>
-</ul>
+ <h2> <%= @chatroom.name %></h2>
+
+<div class="col-sm-3 ">
+<%= link_to "新增進度", new_chatroom_element_path(@chatroom) %>
+
+  <h4>Chatroom elements </h4>
+  <ul>
+      <% @chatroom.elements.each do |request| %>
+      <li>
+        <%= request.name %>
+      </li>
+    <% end %>
+  </ul>
+
+  <h4>Chatroom members </h4>
+  <ul>
+      <% @chatroom.chatroom_users.each do |request| %>
+      <li>
+        <%= request.user %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "返回", chatrooms_path %>
+</div>
+
+<div class="col-sm-6 ">
 
 <div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
   <% @messages.each do |message| %>
@@ -18,15 +33,15 @@
   <% end %>
 </div>
 <div class="row">
-<div class="col-sm-4 ">
+<div class="col-sm-10 ">
 <%= form_for [@chatroom, Message.new], remote: true do |f| %>
   <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
 <% end %>
 </div>
 </div>
+</div>
 
-<%= link_to "返回", chatrooms_path %>
-<%= link_to "新增進度", new_chatroom_element_path(@chatroom) %>
+
 
 
 
