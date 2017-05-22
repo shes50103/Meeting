@@ -13,9 +13,11 @@
   <%= @chatroom.end_at %>
 </div>
 
-<div class = 'element_name'>
-  <h4>Members </h4>
-</div>
+  <h4> Members </h4>
+    <% @chatroom.chatroom_users.each do |request| %>
+    <div class = 'element_name btn btn-primary btn-sm'><%= request.user %></div></br>
+  <% end %>
+
 
 <div class = 'content'>
   <% @chatroom.chatroom_users.each do |request| %>
