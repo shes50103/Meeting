@@ -58,6 +58,6 @@ class ChatroomsController < ApplicationController
     end
 
     def chatroom_params
-      params.require(:chatroom).permit(:name)
+      params.require(:chatroom).permit(:name,:outline,:start_at,:end_at)
     end
 end

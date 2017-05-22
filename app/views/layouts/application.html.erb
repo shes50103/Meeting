@@ -59,7 +59,8 @@
               <% current_user.chatrooms.public_channels.each do |chatroom| %>
                 <li><%= link_to chatroom.name, chatroom, data: {behavior: "chatroom-link", chatroom_id: chatroom.id} %></li>
               <% end %>
-            </ul>           
+            </ul> 
+            <%= link_to "會議大廳", chatrooms_path %>          
           <% end %>
         </div>
         <div class="col-sm-10 col-sm-offset-2">
