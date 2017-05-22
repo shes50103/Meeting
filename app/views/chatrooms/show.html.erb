@@ -3,25 +3,23 @@
 
 <div class="col-sm-3 ">
   
-<div class = 'element_name'>
+<div class = 'element_name_info'>
   <h4> Information </h4>
 </div>
 
-<div class = 'content'>
+<div class = 'content_info'>
   <%= @chatroom.outline %> </br>
   <%= @chatroom.start_at %> </br>
   <%= @chatroom.end_at %>
 </div>
 
+<div class = 'element_name_member'>
   <h4> Members </h4>
-    <% @chatroom.chatroom_users.each do |request| %>
-    <div class = 'element_name btn btn-primary btn-sm'><%= request.user %></div></br>
-  <% end %>
+</div>
 
-
-<div class = 'content'>
+<div class = 'content_member'>
   <% @chatroom.chatroom_users.each do |request| %>
-    <div class = 'element_name btn btn-primary btn-sm'>
+    <div class = 'element_name_member btn btn-primary btn-sm'>
       <%= request.user %>     
     </div></br>
   <% end %>

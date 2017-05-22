@@ -10,6 +10,18 @@ $(document).on "turbolinks:load", ->
     e.preventDefault()
     $(this).siblings('.content').slideToggle(500);
 
+  $('.content_member').hide();
+
+  $(".element_name_member").on "click", (e) ->
+    e.preventDefault()
+    $(this).siblings('.content_member').slideToggle(500);
+
+  $('.content_info').hide();
+
+  $(".element_name_info").on "click", (e) ->
+    e.preventDefault()
+    $(this).siblings('.content_info').slideToggle(500);
+
 
 
   $(i).siblings('.element_name').removeClass('btn-success').removeClass('btn-info').removeClass('btn-warning').addClass('btn-default')  for i in $(".element_completion") when $(i).text() == 0
