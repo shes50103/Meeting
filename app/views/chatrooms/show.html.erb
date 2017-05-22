@@ -2,11 +2,28 @@
  <h2> <%= @chatroom.name %></h2>
 
 <div class="col-sm-3 ">
-  <h4>Chatroom Members </h4>
-      <% @chatroom.chatroom_users.each do |request| %>
-       <div class = 'element_name btn btn-primary btn-sm'><%= request.user %></div></br>
-    <% end %>
+  
+<div class = 'element_name'>
+  <h4> Information </h4>
+</div>
 
+<div class = 'content'>
+  <%= @chatroom.outline %> </br>
+  <%= @chatroom.start_at %> </br>
+  <%= @chatroom.end_at %>
+</div>
+
+<div class = 'element_name'>
+  <h4>Members </h4>
+</div>
+
+<div class = 'content'>
+  <% @chatroom.chatroom_users.each do |request| %>
+    <div class = 'element_name btn btn-primary btn-sm'>
+      <%= request.user %>     
+    </div></br>
+  <% end %>
+</div>
 
   <h4>Agenda </h4>
   <%= link_to "新增進度", new_chatroom_element_path(@chatroom) %>
