@@ -11,6 +11,8 @@
   </thead>
 
   <tbody>
+  <%= link_to 'New Chatroom', new_chatroom_path %>
+
     <% @chatrooms.each do |chatroom| %>
       <tr>
         <td><%= chatroom.name %></td>
@@ -26,4 +28,3 @@
 
 <br>
 
-<%= link_to 'New Chatroom', new_chatroom_path %>
