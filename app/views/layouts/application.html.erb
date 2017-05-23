@@ -14,15 +14,17 @@
             <li class="nav-item">
                 <a class="nav-link navbar-toggler sidebar-toggler" href="#">☰</a>
             </li>
-
             <li class="nav-item px-3">
-                <a class="nav-link" href="#">Dashboard</a>
+            <%= link_to "Home", root_path, class: "nav-link" %>
             </li>
             <li class="nav-item px-3">
-                <a class="nav-link" href="#">Users</a>
+            <%= link_to "Articles", posts_path, class: "nav-link" %>
             </li>
             <li class="nav-item px-3">
-                <a class="nav-link" href="#">Settings</a>
+            <%= link_to "Social", social_index_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item px-3">
+            <%= link_to "Chatroom", chatrooms_path, class: "nav-link" %>
             </li>
         </ul>
         <ul class="nav navbar-nav ml-auto">
@@ -46,22 +48,20 @@
                         <strong>Account</strong>
                     </div>
 
-                    <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Updates<span class="badge badge-info">42</span></a>
-                    <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Messages<span class="badge badge-success">42</span></a>
-                    <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tasks<span class="badge badge-danger">42</span></a>
                     <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> Comments<span class="badge badge-warning">42</span></a>
 
                     <div class="dropdown-header text-center">
                         <strong>Settings</strong>
                     </div>
 
-                    <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
-                    <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Settings</a>
-                    <a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="badge badge-default">42</span></a>
-                    <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Projects<span class="badge badge-primary">42</span></a>
-                    <div class="divider"></div>
-                    <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock Account</a>
-                    <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+                    <% if user_signed_in? %>
+                      <a class="dropdown-item" href="/users/edit"><i class="fa fa-wrench"></i> Settings</a>
+                      <a class="dropdown-item" href="/users/sign_out" data-method="delete"><i class="fa fa-wrench"></i> Logout</a>
+                    <% else %>
+                      
+                      <a class="dropdown-item" href="/users/sign_up"><i class="fa fa-wrench"></i> Sign Up</a>
+                      <a class="dropdown-item" href="/users/sign_in"><i class="fa fa-wrench"></i> Login</a>
+                    <% end %>
                 </div>
             </li>
             <li class="nav-item d-md-down-none">
@@ -84,7 +84,6 @@
                           <li><%= link_to chatroom.name, chatroom, data: {behavior: "chatroom-link", chatroom_id: chatroom.id} %></li>
                         <% end %>
                       </ul> 
-                      <%= link_to "會議大廳", chatrooms_path %>          
                     <% end %>
 
                 </ul>
