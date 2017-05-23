@@ -50,7 +50,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'
   gem 'faker'
-  gem 'sqlite3'
+  gem 'pg'
 
 end
 
