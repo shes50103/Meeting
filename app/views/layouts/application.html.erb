@@ -40,7 +40,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <%= image_tag("avatars/7.jpg") %>
-                    <span class="d-md-down-none">admin</span>
+                    <span class="d-md-down-none"><%= current_user %></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
 
@@ -76,7 +76,7 @@
                 <ul class="nav">
                     <% if user_signed_in? %>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="icon-speedometer"></i> Chatrooms <span class="badge badge-info">NEW</span></a>
+                        <a class="nav-link" href="/chatrooms"><i class="icon-speedometer"></i> Chatrooms <span class="badge badge-info">NEW</span></a>
                     </li>
                       
                       <ul>
