@@ -1,0 +1,27 @@
+.chatroom {
+
+}
+
+.chatroom_message_desplay {
+  width: 400px;
+  right: 0px;
+  bottom: 35px;
+  height: 300px;
+  border: 1px solid red;
+  position: fixed;
+  overflow: auto; /*超出去切掉*/
+
+  border: 1px solid yallow;
+}
+
+
+.chatroom_message_type {
+  width: 400px;
+  right: 0px;
+  bottom: 0px;
+  height: 35px;
+  border: 1px solid red;
+  position: fixed;
+
+  border: 1px solid blue;
+}
