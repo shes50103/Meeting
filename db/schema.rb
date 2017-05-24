@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20170519084050) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "chatroom_users", force: :cascade do |t|
-    t.integer "chatroom_id"
-    t.integer "user_id"
+    t.bigint "chatroom_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "last_read_at"
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170519084050) do
     t.string "name"
     t.text "content"
     t.integer "completion", default: 0
-    t.integer "chatroom_id"
+    t.bigint "chatroom_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chatroom_id"], name: "index_elements_on_chatroom_id"
@@ -51,8 +54,8 @@ ActiveRecord::Schema.define(version: 20170519084050) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "chatroom_id"
-    t.integer "user_id"
+    t.bigint "chatroom_id"
+    t.bigint "user_id"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -63,7 +66,7 @@ ActiveRecord::Schema.define(version: 20170519084050) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "public"
@@ -87,4 +90,10 @@ ActiveRecord::Schema.define(version: 20170519084050) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chatroom_users", "chatrooms"
+  add_foreign_key "chatroom_users", "users"
+  add_foreign_key "elements", "chatrooms"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
+  add_foreign_key "posts", "users"
 end
