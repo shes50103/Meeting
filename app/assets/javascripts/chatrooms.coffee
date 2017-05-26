@@ -40,6 +40,25 @@ $(document).on "turbolinks:load", ->
   $(i).siblings('.element_name').removeClass('btn-default').removeClass('btn-info').removeClass('btn-warning').addClass('btn-success')  for i in $(".element_completion") when $(i).text() >90
 
 
+  button_audio=new Audio("http://www.monoame.com/awi_class/ballsound/click14.wav");
+  screen_audio=new Audio("http://www.monoame.com/awi_class/ballsound/click18.wav");
+  page=0;
+  $(".sub_screen_right").on "click", (e) ->
+    if page<2
+      page+=1;
+      $(".pages").css("left","-"+page*100+"%")
+      screen_audio.play();  
+    else
+      button_audio.play();
+
+  $(".sub_screen_left").on "click", (e) ->
+    if page>0
+      page-=1;
+      $(".pages").css("left","-"+page*100+"%");
+      screen_audio.play();  
+    else
+      button_audio.play();
+
 
 
 
