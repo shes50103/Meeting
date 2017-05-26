@@ -1,18 +1,21 @@
 .chatroom {
-  position: fixed; 
-  right: 0px;
-  bottom: 0px;
-  height: 335px;
+  position: relative; 
+  left: 1%;
+  width: 98%;
+  top: 60px;
+  height: 270px;
+  //border: 1px solid red;
+  box-sizing: border-box;
 
 }
 
 .chatroom_message_desplay {
-  width: 400px;
-  right: 0px;
+  width: 100%;
+  left: 0px;
   bottom: 35px;
-  height: 300px;
-  background-color: rgb(117,150,200);
-  
+  height: 235px;
+  background-color: white;
+  color: rgb(117,150,200);
   overflow-y: auto; /*超出去切掉*/
   display: inline-block;
   position:absolute;  
@@ -20,10 +23,161 @@
 
 
 .chatroom_message_type {
-  width: 400px;
-  right: 0px;
+  width: 100%;
+  //right: 0px;
   bottom: 0px;
   height: 35px;
   position:absolute;
-  border: 1px solid blue;
+  //border: 1px solid blue;
+}
+
+.out_phone {
+  position: fixed;
+  font-family: 微軟正黑體;
+  vertical-align: top;
+  bottom: 0%;
+  left: 0%;
+}
+
+.phone {
+  width: 450px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  left: 0;
+}
+
+.top {
+  height: 40px;
+  position: relative;
+  .camera {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #333;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+.screen {
+  height: 350px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.screen .pages {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  font-size: 0px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  left: 0px;
+}
+.screen .pages .page {
+  font-size: initial;
+  display: inline-block;
+  /*background-color: #333;*/
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  white-space: normal;
+  color: #eee;
+  font-size: 12px;
+  position: relative;
+}
+.screen .pages .page p {
+  margin-top: 30px;
+}
+.screen .pages .page h2 {
+  color: white;
+  font-size: 20px;
+  margin: 0;
+}
+.screen .pages .page:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  display: block;
+  background-color: #FFAB36;
+  width: 100%;
+  height: 60px;
+}
+.screen .pages .page:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  background-color: #FFAB36;
+  width: 100%;
+  height: 20px;
+}
+.screen .pages .page1 {
+  background-color: #FFAB36;
+  color: white;
+}
+
+.bottom {
+  height: 60px;
+  position: relative;
+
+}
+.bottom .button {
+position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.4);
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.bottom .button:hover {
+  background-color: #ddd;
+}
+
+.status, .phonename {
+  color: white;
+  margin: 0;
+}
+
+.status {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.phonename {
+  margin: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+.buttons button {
+  background-color: transparent;
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 5px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.buttons button:hover {
+  background-color: #fff;
+  color: #333;
 }
