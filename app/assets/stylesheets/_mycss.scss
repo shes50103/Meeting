@@ -94,14 +94,7 @@
   font-size: 12px;
   position: relative;
 }
-.screen .pages .page p {
-  margin-top: 30px;
-}
-.screen .pages .page h2 {
-  color: white;
-  font-size: 20px;
-  margin: 0;
-}
+
 .screen .pages .page:before {
   position: absolute;
   left: 0;
@@ -180,4 +173,65 @@ position: absolute;
 .buttons button:hover {
   background-color: #fff;
   color: #333;
+}
+
+.sub_screen {
+  border-radius: 40%;
+  height: 20px;
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.sub_screen_left {
+  text-align:center;
+  width: 50%;
+  color: white;
+  background-color: rgba(black,0.1);
+  user-select: none;
+  font-size: 15px;
+  position: absolute;
+  left: 0;
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.sub_screen_left:hover {
+  color: black;
+  background-color: white;
+  user-select: none;
+  font-size: 15px;
+  position: absolute;
+  left: 0;
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+.sub_screen_right {
+  text-align:center;
+  width: 50%;
+  color: white;
+  background-color: rgba(black,0.1);
+  user-select: none;
+  font-size: 15px;
+  position: absolute;
+  right: 0;
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.sub_screen_right:hover {
+  color: black;
+  background-color: white;
+  user-select: none;
+  font-size: 15px;
+  position: absolute;
+  right: 0;
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
 }
