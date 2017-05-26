@@ -1,4 +1,8 @@
 .chatroom {
+  position: fixed; 
+  right: 0px;
+  bottom: 0px;
+  height: 335px;
 
 }
 
@@ -7,11 +11,11 @@
   right: 0px;
   bottom: 35px;
   height: 300px;
-  border: 1px solid red;
-  position: fixed;
-  overflow: auto; /*超出去切掉*/
-
-  border: 1px solid yallow;
+  background-color: rgb(117,150,200);
+  
+  overflow-y: auto; /*超出去切掉*/
+  display: inline-block;
+  position:absolute;  
 }
 
 
@@ -20,8 +24,6 @@
   right: 0px;
   bottom: 0px;
   height: 35px;
-  border: 1px solid red;
-  position: fixed;
-
+  position:absolute;
   border: 1px solid blue;
 }

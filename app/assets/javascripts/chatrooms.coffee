@@ -1,9 +1,16 @@
+
+
 $(document).on "turbolinks:load", ->
   $("#new_message").on "keypress", (e) ->
     if e && e.keyCode == 13
       e.preventDefault()
+      $scrollHeight=$(".chatroom_message_desplay")[0].scrollHeight  
+      $(".chatroom_message_desplay").animate({ scrollTop: $scrollHeight}, 200)
       $(this).submit()
 
+  $('.chatroom_message_desplay').scrollTop(10000)
+
+      
   $('.content').hide();
 
   $(".element_name").on "click", (e) ->
@@ -31,7 +38,6 @@ $(document).on "turbolinks:load", ->
   $(i).siblings('.element_name').removeClass('btn-default').removeClass('btn-info').removeClass('btn-success').addClass('btn-warning')  for i in $(".element_completion") when $(i).text() >= 70 
 
   $(i).siblings('.element_name').removeClass('btn-default').removeClass('btn-info').removeClass('btn-warning').addClass('btn-success')  for i in $(".element_completion") when $(i).text() >90
-
 
 
 
