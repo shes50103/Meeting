@@ -103,7 +103,7 @@ $(document).on "turbolinks:load", ->
     button_audio.play();
 
   $(".up").on "click", (e) ->
-    $(".phone").css("bottom","0px");
+    $(".phone").css("bottom","5px");
     button_audio.play();
 
 
@@ -117,11 +117,11 @@ $(document).on "turbolinks:load", ->
     if wiggletime<=20
       wiggletime+=1;
       if wiggletime%2==0
-        $(".phone").css("left",""+(-30)+"px");
+        $(".phone").css("right",""+(-55)+"px");
       else
-        $(".phone").css("left",""+(30)+"px");
+        $(".phone").css("right",""+(65)+"px");
       if wiggletime==21
-        $(".phone").css("left","");
+        $(".phone").css("right","");
   ,60
 
 

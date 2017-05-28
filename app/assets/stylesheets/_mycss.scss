@@ -29,12 +29,12 @@
   position:absolute;
 }
 .out_phone {
-  position: relative; 
+  position: fixed; 
   font-family: 微軟正黑體;
   vertical-align: top;
-  bottom: 0%;
+  bottom: 5px;
   transition: 2s;
-  right: 0px;
+  right: 5px;
 }
 
 .phone {
@@ -45,7 +45,7 @@
   border-radius: 10px;
   transition: 2s;
   bottom: 0;
-  left: 0;
+  right: 5px;
 }
 
 .top {
