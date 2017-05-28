@@ -43,21 +43,7 @@
 
   
 </div>
-<!--
-<div class="col-sm-6 chatroom" >
-  <div class="chatroom_message_desplay" data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
-    <% @messages.each do |message| %>
-    	<%= render message %>
-    <% end %>
-  </div>
-  <div class="row">
-  <div class="chatroom_message_type" class="col-sm-10 ">
-  <%= form_for [@chatroom, Message.new], remote: true do |f| %>
-    <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
-  <% end %>
-  </div>
-  </div>
-</div> -->
+<%= render 'layouts/phone' %>
 
 
 
