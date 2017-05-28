@@ -39,7 +39,7 @@ $(document).on "turbolinks:load", ->
 
   $(i).siblings('.element_name').removeClass('btn-default').removeClass('btn-info').removeClass('btn-warning').addClass('btn-success')  for i in $(".element_completion") when $(i).text() >90
 
-
+  home_audio=new Audio("http://www.monoame.com/awi_class/ballsound/click23.wav");
   button_audio=new Audio("http://www.monoame.com/awi_class/ballsound/click14.wav");
   screen_audio=new Audio("http://www.monoame.com/awi_class/ballsound/click18.wav");
   page=0;
@@ -58,6 +58,43 @@ $(document).on "turbolinks:load", ->
       screen_audio.play();  
     else
       button_audio.play();
+
+  $(".button").on "click", (e) ->
+    page=0
+    $(".pages").css("left","-"+page*100+"%")
+    home_audio.play()
+
+  $(".i5").on "click", (e) ->
+    $(".phone").css("width","");
+    $(".screen").css("height","");
+    $(".phonename").text($(this).text());
+    button_audio.play();
+
+  $(".i5s").on "click", (e) ->
+    $(".phone").css("width","300px");
+    $(".screen").css("height","420px");
+    $(".phonename").text($(this).text());
+    button_audio.play();
+
+  $(".black").on "click", (e) ->
+    $(".phone").css("background-color","rgba(0, 0, 0, 0.9)");
+    $(".phonename").text($(this).text());
+    button_audio.play();
+
+  $(".white").on "click", (e) ->
+    $(".phone").css("background-color","rgb(210,210,210)");
+    $(".phonename").text($(this).text());
+    button_audio.play();
+
+  $(".gold").on "click", (e) ->
+    $(".phone").css("background-color","#FFE66F");
+    $(".phonename").text($(this).text());
+    button_audio.play();
+
+  $(".pink").on "click", (e) ->
+    $(".phone").css("background-color","#FFD2D2");
+    $(".phonename").text($(this).text());
+    button_audio.play();
 
 
 
