@@ -6,8 +6,8 @@
     <div class="screen">
       <div class="pages">
         <div class="page page1">
-          <div class=" chatroom" >
-          <p>a</p>
+                  <div class=" chatroom" >
+          <!-- <p>a</p><h2>Page3: Setting</h2> -->
             <div class="chatroom_message_desplay" data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
               <% @messages.each do |message| %>
                 <%= render message %>
@@ -20,9 +20,21 @@
               </div>
           </div>
         </div>
-        <div class="page page2"> <p>a</p> </div>
+        <div class="page page2">
+        <h2>Setting</h2>
+        <p></p>
+          <div class="buttons">
+            <button class="i5">iphone5</button>
+            <button class="i5s">iphone5s</button>
+            <button class="i6">iphone6</button>
+            <button class="i6s">iphone6+</button>
+            <button class="wiggle">wiggle</button>
+            <button class="turn">turn around</button>
+          </div>
+        </div>
         <div class="page page3">
-          <p>a</p>
+        <p>a</p>
+        <p>a</p>
         </div>
       </div>
     </div>
