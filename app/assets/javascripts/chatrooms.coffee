@@ -43,6 +43,8 @@ $(document).on "turbolinks:load", ->
   button_audio=new Audio("http://www.monoame.com/awi_class/ballsound/click14.wav");
   screen_audio=new Audio("http://www.monoame.com/awi_class/ballsound/click18.wav");
   page=0;
+  wiggle_audio=new Audio("http://www.monoame.com/awi_class/ballsound/phonevi.mp3");
+  wiggletime=21;
   $(".sub_screen_right").on "click", (e) ->
     if page<2
       page+=1;
@@ -64,13 +66,13 @@ $(document).on "turbolinks:load", ->
     $(".pages").css("left","-"+page*100+"%")
     home_audio.play()
 
-  $(".i5").on "click", (e) ->
+  $(".origin").on "click", (e) ->
     $(".phone").css("width","");
     $(".screen").css("height","");
     $(".phonename").text($(this).text());
     button_audio.play();
 
-  $(".i5s").on "click", (e) ->
+  $(".i6").on "click", (e) ->
     $(".phone").css("width","300px");
     $(".screen").css("height","420px");
     $(".phonename").text($(this).text());
@@ -95,6 +97,34 @@ $(document).on "turbolinks:load", ->
     $(".phone").css("background-color","#FFD2D2");
     $(".phonename").text($(this).text());
     button_audio.play();
+
+  $(".down").on "click", (e) ->
+    $(".phone").css("bottom","-800px");
+    button_audio.play();
+
+  $(".up").on "click", (e) ->
+    $(".phone").css("bottom","0px");
+    button_audio.play();
+
+
+  $(".wiggle").on "click", (e) ->
+    wiggletime=0;
+    wiggle_audio.play();
+
+#為啥right晃動不行！！！
+  setInterval ->
+    console.log(wiggletime);
+    if wiggletime<=20
+      wiggletime+=1;
+      if wiggletime%2==0
+        $(".phone").css("left",""+(-30)+"px");
+      else
+        $(".phone").css("left",""+(30)+"px");
+      if wiggletime==21
+        $(".phone").css("left","");
+  ,60
+
+
 
 
 

@@ -55,6 +55,7 @@
                     </div>
 
                     <% if user_signed_in? %>
+                      <a class="dropdown-item up" ><i class="fa fa-wrench"></i> Phone</a>
                       <a class="dropdown-item" href="/users/edit"><i class="fa fa-wrench"></i> Settings</a>
                       <a class="dropdown-item" href="/users/sign_out" data-method="delete"><i class="fa fa-wrench"></i> Logout</a>
                     <% else %>
