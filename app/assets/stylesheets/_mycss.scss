@@ -4,7 +4,6 @@
   width: 98%;
   top: 60px;
   height: 270px;
-  //border: 1px solid red;
   box-sizing: border-box;
 
 }
@@ -28,7 +27,6 @@
   bottom: 0px;
   height: 35px;
   position:absolute;
-  //border: 1px solid blue;
 }
 
 .out_phone {
@@ -36,7 +34,7 @@
   font-family: 微軟正黑體;
   vertical-align: top;
   bottom: 0%;
-  left: 0%;
+  left: 20%;
 }
 
 .phone {
@@ -88,7 +86,7 @@
 
 }
 .screen .pages .page {
-  font-size: 1px;
+  font-size: 12px;
   display: inline-block;
   width: 100%;
   height: 100%;
