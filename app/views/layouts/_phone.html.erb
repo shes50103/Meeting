@@ -1,0 +1,59 @@
+<div class="out_phone">
+  <div class="phone">
+    <div class="top">
+      <div class="camera"></div>
+    </div>
+    <div class="screen">
+      <div class="pages">
+        <div class="page page1">
+                  <div class=" chatroom" >
+          <!-- <p>a</p><h2>Page3: Setting</h2> -->
+            <div class="chatroom_message_desplay" data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
+              <% @messages.each do |message| %>
+                <%= render message %>
+              <% end %>
+            </div>
+              <div class="chatroom_message_type" >
+              <%= form_for [@chatroom, Message.new], remote: true do |f| %>
+                <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
+              <% end %>
+              </div>
+          </div>
+        </div>
+        <div class="page page2">
+        <h2>Setting</h2>
+        <p></p>
+          <div class="buttons">
+          <div class="pgone_setting">
+            <button class="origin">origin</button>
+            <button class="i6">iphone6</button>
+          </div>
+          <div class="pgone_setting">
+            <button class="black">黑</button>
+            <button class="white">銀</button>
+            <button class="gold">土豪金</button>
+            <button class="pink">玫瑰金</button>
+          </div>
+
+          <div class="pgone_setting">
+            <button class="wiggle">wiggle</button>
+            <button class="down">Shut down</button>
+          </div>
+
+          </div>
+        </div>
+        <div class="page page3">
+        <p>a</p>
+        <p>a</p>
+        </div>
+      </div>
+    </div>
+    <div class="sub_screen">
+      <div class="sub_screen_left"> ◄ </div>
+      <div class="sub_screen_right"> ► </div>
+    </div>
+    <div class="bottom">
+      <div class="button">□</div> 
+    </div>
+  </div>
+</div>
